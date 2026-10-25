@@ -1,0 +1,17 @@
+{
+  "name": "Obras y Gastos",
+  "short_name": "Obras y Gastos",
+  "description": "Trabajos, aprobaciones, facturas y gastos de las estancias – Rural Bioenergía",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1B4D2E",
+  "theme_color": "#1B4D2E",
+  "lang": "es",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
