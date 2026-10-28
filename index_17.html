@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Obras y Gastos</title>
+<meta name="theme-color" content="#1B4D2E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Obras y Gastos">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+  html,body{margin:0;height:100%;background:#1B4D2E;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+  iframe{position:fixed;inset:0;width:100%;height:100%;border:0;background:#F2F5F0}
+  #load{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff}
+  #load img{width:96px;height:96px;border-radius:22px}
+  #open{position:fixed;right:max(10px,env(safe-area-inset-right));bottom:max(10px,env(safe-area-inset-bottom));z-index:5;background:rgba(27,77,46,.9);color:#fff;border:0;border-radius:999px;padding:8px 12px;font-size:12px;text-decoration:none;display:none}
+</style>
+</head>
+<body>
+<div id="load"><img src="icon-192.png" alt=""><b>Obras y Gastos</b><span style="opacity:.75;font-size:13px">Cargando…</span></div>
+<iframe id="app" title="Obras y Gastos" allow="camera; clipboard-write; fullscreen"></iframe>
+<a id="open" target="_blank" rel="noopener">¿No carga? Abrir acá ↗</a>
+<script>
+  /* Enlace de la aplicación web de Apps Script (sin /a/macros/ypoti.com: entra cualquiera con usuario y contraseña) */
+  const APP_URL = 'https://script.google.com/macros/s/AKfycbwR_duIdDBvXEZxGH8TkoearFqFXyoGUAFVe5wLqCWUqnFRbjRkWdFUbBmZh-5h1dTo1Q/exec';
+  const f = document.getElementById('app'), o = document.getElementById('open');
+  f.src = APP_URL; o.href = APP_URL;
+  f.onload = () => { document.getElementById('load').style.display = 'none'; };
+  setTimeout(() => { o.style.display = 'block'; }, 8000);
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+</script>
+</body>
+</html>
